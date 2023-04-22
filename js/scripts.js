@@ -97,13 +97,20 @@ class supervisorCarrito{
         localStorage.setItem("listaJuegos", listaJuegosJSON);
     }
 
+    verificarDatosEnStorage(){
+        this.cartList = JSON.parse(localStorage.getItem('listaJuegos')) || [];
+        if(this.cartList.length > 0){
+            this.iniciarCartDOM();
+        }
+    }
+
     limpiarContenedor(){
         this.contenedorCarrito.innerHTML = '';
-        this.cartList = [];
     }
 
     limpiarLocalStorage(){
         localStorage.removeItem("listaJuegos");
+        this.cartList = [];
     }
 
     iniciarCartDOM(){
@@ -133,24 +140,19 @@ class supervisorCarrito{
                 </div>
             </div>`;
     }
-
-    verificarDatosEnStorage(){
-        this.cartList = JSON.parse(localStorage.getItem('listaJuegos')).length > 0 ? JSON.parse(localStorage.getItem('listaJuegos')) : [];
-        console.log(this.cartList);
-        if(this.cartList.length > 0){
-            this.iniciarCartDOM();
-        }
-    }
 }
 
 const gamesManager = new JuegosSupervisor();
 const cartManager = new supervisorCarrito();
+
+gamesManager.crearListaJuegos();
+cartManager.verificarDatosEnStorage();
+gamesManager.iniciarDOM();
 llenarCategorias();
 
 
 function agregarCarrito(id,index){
     let listaCarrito = cartManager.obtenerCartList();
-    console.log(listaCarrito.length)
     if(listaCarrito.length < 1){
         cartManager.agregarJuego(gamesManager.obtenerJuego(index));
     } else {
@@ -254,10 +256,6 @@ function llenarCategorias() {
     document.getElementById("categorias").innerHTML += opciones;
 }
 
-gamesManager.crearListaJuegos();
-cartManager.verificarDatosEnStorage();
-gamesManager.iniciarDOM();
-
 function generarCodigo() {
     var codigo = [];
     for (var i = 0; i < 3; i++) {
@@ -269,21 +267,30 @@ function generarCodigo() {
 const finCompra = document.getElementById("finCompras");
 finCompra.addEventListener('click', ()=>{
     let listaCarro = cartManager.obtenerCartList();
-    let mensaje = 'Estas son sus claves:<br>';
-    listaCarro.forEach(item => {
-        for (let i = 0; i < item.cantidad; i++) {
-            mensaje += `Cod.: ${item.juego.nombre} -> ${generarCodigo()}<br>`;
-        }
-    });
-    mensaje += 'Puede canjear los codigos en Steam.';
-    console.log(mensaje);
-    Swal.fire({
-        title: 'Éxito en la compra!!!',
-        html: mensaje,
-        icon: 'success',
-        confirmButtonText: '¡Entendido!'
-    });
-    cartManager.limpiarContenedor();
-    cartManager.limpiarLocalStorage();
-    document.getElementById("cartCantElements").innerHTML = 0;
+    if(listaCarro.length > 0){
+        let mensaje = 'Estas son sus claves:<br>';
+        listaCarro.forEach(item => {
+            for (let i = 0; i < item.cantidad; i++) {
+                mensaje += `Cod.: ${item.juego.nombre} -> ${generarCodigo()}<br>`;
+            }
+        });
+        mensaje += 'Puede canjear los codigos en Steam.';
+        Swal.fire({
+            title: 'Éxito en la compra!!!',
+            html: mensaje,
+            icon: 'success',
+            confirmButtonText: '¡Entendido!'
+        });
+        cartManager.limpiarContenedor();
+        cartManager.limpiarLocalStorage();
+        document.getElementById("cartCantElements").innerHTML = 0;
+    } else{
+        Swal.fire({
+            title: 'INFO!!',
+            html: 'El carrito está vacío!!',
+            icon: 'info',
+            confirmButtonText: 'OK'
+        });
+    }
+    
 });
