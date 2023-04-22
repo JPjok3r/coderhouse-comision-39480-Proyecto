@@ -135,7 +135,8 @@ class supervisorCarrito{
     }
 
     verificarDatosEnStorage(){
-        this.cartList = JSON.parse(localStorage.getItem("listaJuegos")) || [];
+        this.cartList = JSON.parse(localStorage.getItem('listaJuegos')).length > 0 ? JSON.parse(localStorage.getItem('listaJuegos')) : [];
+        console.log(this.cartList);
         if(this.cartList.length > 0){
             this.iniciarCartDOM();
         }
@@ -145,6 +146,7 @@ class supervisorCarrito{
 const gamesManager = new JuegosSupervisor();
 const cartManager = new supervisorCarrito();
 llenarCategorias();
+
 
 function agregarCarrito(id,index){
     let listaCarrito = cartManager.obtenerCartList();
@@ -253,8 +255,8 @@ function llenarCategorias() {
 }
 
 gamesManager.crearListaJuegos();
-gamesManager.iniciarDOM();
 cartManager.verificarDatosEnStorage();
+gamesManager.iniciarDOM();
 
 function generarCodigo() {
     var codigo = [];
