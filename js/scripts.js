@@ -37,7 +37,7 @@ class Juego{
 class JuegosSupervisor {
     constructor(){
         this.gameList = [];
-        this.contenedorJuegos = document.getElementById("contenedorJuegos");
+        this.contenedorJuegos = document.getElementById("contenedorJuegos"); 
     }
 
     async crearListaJuegos(){
