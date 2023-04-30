@@ -41,7 +41,7 @@ class JuegosSupervisor {
     }
 
     async crearListaJuegos(){
-        const res = await fetch('https://github.com/JPjok3r/coderhouse-comision-39480-Proyecto/blob/master/www.juegos_db.json');
+        const res = await fetch('www.juegos_db.json');
         this.gameList = await res.json();
         this.iniciarDOM();
     }
