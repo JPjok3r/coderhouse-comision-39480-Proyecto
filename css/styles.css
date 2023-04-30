@@ -478,6 +478,13 @@ legend + * {
   appearance: button;
 }
 
+.bannerPresentacion{
+  background-image: url('../assets/img/bannerGG.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 output {
   display: inline-block;
 }

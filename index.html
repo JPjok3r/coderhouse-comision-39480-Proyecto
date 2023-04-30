@@ -12,6 +12,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
         <link href="./css/styles.css" rel="stylesheet" />
     </head>
     <body>
@@ -23,11 +24,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="categorias">
-                                <li><a class="dropdown-item" href="#!">Todos los juegos</a></li>
+                                <li><a class="dropdown-item" href="#!" id="li-todos">Todos los juegos</a></li>
                                 <li><hr class="dropdown-divider" /></li>
                             </ul>
                         </li>
@@ -39,15 +39,15 @@
                             <span class="badge bg-dark text-white ms-1 rounded-pill" id="cartCantElements">0</span>
                         </button>
                     <!-- </form> -->
-                </div>
+                </div> 
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-dark py-5">
+        <header class="bg-dark py-5 bannerPresentacion">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                    <h1 class="display-4 fw-bolder">GG GAMESTORE</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Compra tus juegos favoritos y los nuevos lanzamientos</p>
                 </div>
             </div>
         </header>
@@ -72,8 +72,9 @@
                         
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Seguir comprando</button>
-                        <button type="button" class="btn btn-danger" id="finCompras">Finalizar compra</button>
+                        <p class="card-text" id="totalCart">Total: $0</p>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
+                        <button type="button" class="btn btn-danger" id="finCompras">Finalizar</button>
                     </div>
                 </div>
             </div>
@@ -88,6 +89,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         <!-- Core theme JS-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
         

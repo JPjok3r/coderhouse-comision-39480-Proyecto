@@ -1,0 +1,14 @@
+[
+    {"id": 1,  "nombre": "The last of us: Part I PC", "categoria": ["Survival", "Zombies", "Accion", "Aventura"],   "precio": 54.99,    "descuento": 0,   "rate": 4, "imgsrc":"./assets/img/tlou.png"},
+    {"id": 2,  "nombre": "Resident Evil 4 Remake",    "categoria": ["Survival", "Zombies", "Accion", "Aventura"],   "precio": 59.99,    "descuento": 0,   "rate": 5, "imgsrc":"./assets/img/re4r.png"},
+    {"id": 3,  "nombre": "Darksiders III",            "categoria": ["RPG", "Accion", "Aventura"],                   "precio": 35.99,    "descuento": 20,  "rate": 0, "imgsrc":"./assets/img/darksiders3.png"},
+    {"id": 4,  "nombre": "Grand Theft Auto V",        "categoria": ["Accion", "Aventura", "MMO"],                   "precio": 29.99,    "descuento": 60,  "rate": 5, "imgsrc":"./assets/img/gtav.png"},
+    {"id": 5,  "nombre": "Assassins Creed Valhalla",  "categoria": ["RPG", "Accion", "Aventura"],                   "precio": 49.99,    "descuento": 0,   "rate": 4, "imgsrc":"./assets/img/acv.png"},
+    {"id": 6,  "nombre": "FIFA 23",                   "categoria": ["Deportes", "Simulacion"],                      "precio": 49.99,    "descuento": 50,  "rate": 0, "imgsrc":"./assets/img/fifa23.png"},
+    {"id": 7,  "nombre": "Hogwarts Legacy",           "categoria": ["RPG", "Accion", "Aventura"],                   "precio": 59.99,    "descuento": 0,   "rate": 0, "imgsrc":"./assets/img/legacy.png"},
+    {"id": 8,  "nombre": "Sons of the Forest",        "categoria": ["Simulacion", "Indie", "Accion", "Aventura"],   "precio": 29.99,    "descuento": 10,  "rate": 3, "imgsrc":"./assets/img/sotf.png"},
+    {"id": 9,  "nombre": "Forza Horizon 4",           "categoria": ["Carreras", "Autos", "Accion", "Aventura"],     "precio": 39.99,    "descuento": 15,  "rate": 4, "imgsrc":"./assets/img/forzah.png"},
+    {"id": 10, "nombre": "Rust + DLC",                "categoria": ["MMO", "Indie", "Accion", "Aventura", "RPG"],   "precio": 107,      "descuento": 30,  "rate": 0, "imgsrc":"./assets/img/rust.png"},
+    {"id": 11, "nombre": "StarCraft 2",               "categoria": ["Estrategia"],                                  "precio": 39.99,    "descuento": 75,  "rate": 3, "imgsrc":"./assets/img/sc2.png"},
+    {"id": 12, "nombre": "World of WarCraft",         "categoria": ["MMO", "Estrategia", "RPG"],                    "precio": 129.99,   "descuento": 0,   "rate": 0, "imgsrc":"./assets/img/wow.png"}
+]
