@@ -41,7 +41,7 @@ class JuegosSupervisor {
     }
 
     async crearListaJuegos(){
-        const res = await fetch('../www.juegos_db.json');
+        const res = await fetch('www.juegos_db.json');
         this.gameList = await res.json();
         this.iniciarDOM();
     }
@@ -374,6 +374,7 @@ finCompra.addEventListener('click', ()=>{
         cartManager.limpiarContenedor();
         cartManager.limpiarLocalStorage();
         document.getElementById("cartCantElements").innerHTML = 0;
+        document.getElementById("totalCart").innerHTML = `Total: $0`;
     } else{
         Swal.fire({
             title: 'INFO!!',
